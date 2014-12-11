@@ -19,8 +19,9 @@ module.exports = function(environment) {
     }
   };
 
+  // To test on a real device, make sure to add your IP address to this list,  there is no localhost on the device :)
   ENV.contentSecurityPolicy = {
-    'connect-src': "ws://localhost:7777/sync"
+    'connect-src': "ws://localhost:7777/sync ws://0.0.0.0:7777/sync"
   }
 
   if (environment === 'development') {

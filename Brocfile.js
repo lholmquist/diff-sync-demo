@@ -8,6 +8,9 @@ var app = new EmberApp();
 // output files.
 app.import('bower_components/topcoat/css/topcoat-mobile-light.min.css');
 app.import('vendor/aerogear.custom.js');
+
+app.import('bower_components/hammerjs/hammer.js');
+app.import('bower_components/ember-hammer/ember-hammer.js');
 // If you need to use different assets in different
 // environments, specify an object as the first parameter. That
 // object's keys should be the environment name and the values
