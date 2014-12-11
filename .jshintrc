@@ -2,7 +2,8 @@
   "predef": [
     "document",
     "window",
-    "-Promise"
+    "-Promise",
+    "AeroGear"
   ],
   "browser": true,
   "boss": true,
@@ -25,8 +26,10 @@
   "undef": true,
   "sub": true,
   "strict": false,
-  "white": false,
+  "white": true,
   "eqnull": true,
   "esnext": true,
-  "unused": true
+  "unused": true,
+  "indent": 4,
+  "quotmark": "single"
 }

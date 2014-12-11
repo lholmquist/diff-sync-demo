@@ -1,3 +1,11 @@
-<h2 id='title'>Welcome to Ember.js</h2>
-
-{{outlet}}
+<section id="main">
+    <div class="topcoat-navigation-bar">
+        <div class="topcoat-navigation-bar__item quarter disconnect">
+            <button class="topcoat-button--quiet" id="connection" {{action 'toggleConnection'}}>{{buttonDescription}}</button>
+        </div>
+        <div class="topcoat-navigation-bar__item center half">
+            <h1 class="topcoat-navigation-bar__title">Luke Skywalker</h1>
+        </div>
+    </div>
+    {{outlet}}
+</section>
