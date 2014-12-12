@@ -35,19 +35,10 @@ export default Ember.ObjectController.extend({
     syncClient: {},
     actions: {
         modelUpdate: function () {
-            var edits = this.get('syncClient').diff(cp(this.get('model')));
-            this.get('syncClient').sendEdits(edits);
+            this.get('syncClient').sync(cp(this.get('model')));
         }
     },
-    _onmessage: function (e) {
-        var data = JSON.parse(e.data),
-            doc;
-
-        if (data) {
-            this.get('syncClient').patch(data);
-        }
-
-        doc = this.get('syncClient').getDocument('12345');
+    _onsync: function (doc) {
         this.set('model', cp(doc));
     },
     _onopen: function () {
@@ -57,7 +48,7 @@ export default Ember.ObjectController.extend({
             this.get('syncClient').addDocument(seedData);
             this.set('needsInit', false);
         } else {
-            this.get('syncClient').update('12345');
+            this.get('syncClient').fetch('12345');
         }
     }
 });
